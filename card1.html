@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    
+    <nav style="background-color: black; display: flex; justify-content: space-between; align-items: center; height: 40px; padding: 0%; color: white; position: sticky; top:0%; padding: 0%; z-index: 9999;">
+                    <h4 style="color: white;font-size: x-large; margin-left: 50px;">P.G.CAFE</h4>
+
+        <div style>
+            <a href="./cafe.html" style="margin-left: 30px; text-decoration: none; color: white; padding:7px; overscroll-behavior: none; " 
+            onMouseOver="this.style.color= 'rgb(115, 110, 110)  '" onmouseout="this.style.color= 'white'">HOME</a>
+            <a href="./about.html"  style="margin-left: 30px; text-decoration: none;color: white; padding:7px;"
+            onMouseOver="this.style.color= 'rgb(115, 110, 110)  '" onmouseout="this.style.color= 'white'">ABOUT</a>
+            <a href="./index .html"  style="margin-left: 30px;text-decoration: none;color: white; padding:7px;"
+            onMouseOver="this.style.color= 'rgb(115, 110, 110)  '" onmouseout="this.style.color= 'white'">CONTACT</a>
+         </div>
+
+
+           
+        <div>
+           <select name="" id="" style="margin-right: 30px; width: 80px; background-color: black; color: white;">
+               <option value="">setting</option>
+               <option value="">account</option>
+               <option value="">order</option>
+           </select>
+        </div>
+   </nav>
+
+
+   <div class="home" >
+    <img src="./c1.jpg" alt="" style="width: 100%; height: 730px; opacity:50%;">
+    <div style="position: absolute; top: 5%; right: 10%; align-items: center;text-align: center;">
+        
+   
+
+
+        
+<form action="" method="post" name="google-sheet">
+       
+        <legend style="color: white; text-align: center; margin-top: 30px;"><h1>Order Dish</h1></legend>
+   <div style="display: flex; color: white; margin-top: 50px; border: 5px double white; padding: 30px;">
+
+            <div style="align-items: center; justify-content: center;text-align: center;">
+                <img src="./c1.jpg" alt="" style="width: 50%;">
+                <h1>Patties</h1>
+            </div>
+            <div style="color: white;">
+                <label for="">Dish</label><br>
+                <input type="text" value="Patties" name="product" style="margin-bottom: 30px; width: 80%; background-color: rgb(97, 96, 96); height: 30px;opacity:50%;;opacity:50%; color:white; "
+                onMouseOver="this.style.opacity='100%'"  onmouseout="this.style.opacity='50%'">><br>
+                <label for="">Address</label><br>
+                <input type="text" name="address" style="margin-bottom: 30px; width: 80%; background-color: rgb(97, 96, 96); height: 30px;opacity:50%;;opacity:50%; color:white; "
+                onMouseOver="this.style.opacity='100%'"  onmouseout="this.style.opacity='50%'"><br>
+                <label for="">mobile no.</label><br>
+                <input type="text" name="mobile" id="" size="10" style="margin-bottom: 30px; width: 80%; background-color: rgb(97, 96, 96); height: 30px;opacity:50%;;opacity:50%; color:white; "
+                onMouseOver="this.style.opacity='100%'"  onmouseout="this.style.opacity='50%'"><br>
+                <label for="">date</label><br>
+                <input type="datetime-local" name="date" id="" style="margin-bottom: 30px; width: 80%; background-color: rgb(97, 96, 96); height: 30px;opacity:50%;;opacity:50%; color:white; " 
+                onMouseOver="this.style.opacity='100%'"  onmouseout="this.style.opacity='50%'"><br>
+                <label for="">quentity</label><br>
+                <input type="number" name="que" id="" style="margin-bottom: 30px; width: 80%; background-color: rgb(97, 96, 96); height: 30px;opacity:50%;;opacity:50%; color:white; " 
+                onMouseOver="this.style.opacity='100%'"  onmouseout="this.style.opacity='50%'"><br>
+                <input type="submit" name="submit" style="margin: 20px; background-color: rgb(169, 71, 71);color: white; border: solid; width: 40%; border-radius: 10px;" onMouseOver="this.style.background='rgb(16, 221, 98)'" onmouseout="this.style.background='rgb(169, 71, 71)'" value="Order">
+
+            </div>
+        </div>
+    
+</form>
+<marquee behavior="" direction="" style="color: white;"> <h1>P G CAFE</h1></marquee>
+
+</div>
+</div>
+
+
+
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyXwZ0tPzfthvdUZw-motjAZJPhRXd7MOMWZOCVMpbyy-ahIDbHjG8vWNWAULWPkG1l1g/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("ORDER CONFIRMED"))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+
+</body>
+</html>
